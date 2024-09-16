@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bytebank/_core/constants/bytebank_screens.dart';
 import 'package:flutter_bytebank/_core/widgets/appbar_widget.dart';
 import 'package:flutter_bytebank/_core/widgets/drawer_widget.dart';
-import 'package:flutter_bytebank/home/widgets/balance_widget.dart';
+import 'package:flutter_bytebank/_core/widgets/balance_widget.dart';
 import 'package:flutter_bytebank/home/widgets/home_background_widget.dart';
 import 'package:flutter_bytebank/home/widgets/home_title_widget.dart';
+import '../../../_core/constants/bytebank_colors.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -20,7 +21,7 @@ class HomePage extends StatelessWidget {
       body: const HomeBackgroundWidget(
         children: [
           HomeTitleWidget(),
-          BalanceWidget(),
+          BalanceWidget(color: BytebankColors.white),
         ],
       ),
     );
