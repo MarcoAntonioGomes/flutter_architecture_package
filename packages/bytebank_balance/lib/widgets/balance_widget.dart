@@ -14,6 +14,7 @@ class BytebankBalance extends StatefulWidget {
 class _BytebankBalanceState extends State<BytebankBalance> {
 
   bool isShowingBalance = false;
+  double userBalance = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -21,13 +22,21 @@ class _BytebankBalanceState extends State<BytebankBalance> {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          "Saldo",
-          style: TextStyle(
-            fontSize: 20,
-            color: widget.color,
-            fontWeight: FontWeight.w600,
-          ),
+        Row(
+          children: [
+            Text(
+              "Saldo",
+              style: TextStyle(
+                fontSize: 20,
+                color: widget.color,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            const SizedBox(width: 24),
+            IconButton(onPressed: (){
+              onVisibilityBalanceClicked();
+            }, icon: Icon((isShowingBalance) ? Icons.visibility : Icons.visibility_off, color:  widget.color,))
+          ],
         ),
         Padding(
           padding: EdgeInsets.symmetric(vertical: 8.0),
@@ -41,7 +50,7 @@ class _BytebankBalanceState extends State<BytebankBalance> {
           ),
         ),
         Text(
-          "R\$ 2.500,00",
+          (isShowingBalance) ? "R\$ ${userBalance.toStringAsFixed(2)}" : "R\$ ****",
           style: TextStyle(
             color: widget.color,
             fontSize: 32,
@@ -50,4 +59,19 @@ class _BytebankBalanceState extends State<BytebankBalance> {
       ],
     );
   }
+
+  onVisibilityBalanceClicked(){
+
+    if(isShowingBalance){
+      setState(() {
+        isShowingBalance = false;
+      });
+    }else{
+      setState(() {
+      isShowingBalance = true;
+      });
+    }
+
+  }
 }
+
