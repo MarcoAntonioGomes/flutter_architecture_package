@@ -10,7 +10,9 @@ dependencies:
   flutter:
     sdk: flutter
   google_fonts: ^5.1.0
-  intl: ^0.18.1
+  flutter_localizations:
+    sdk: flutter
+  intl: any
   bytebank_balance:
     git: https://github.com/MarcoAntonioGomes/bytebank_balance.git
 
@@ -22,11 +24,14 @@ dev_dependencies:
   flutter_launcher_icons: ^0.13.1
 
 flutter:
+  generate: true
   uses-material-design: true
   assets: 
     - assets/
     - assets/pixels/
     - assets/illustrations/
+
+
 
 flutter_native_splash:
   color: "#000000"
@@ -41,3 +46,4 @@ flutter_launcher_icons:
   ios: true
   image_path: "assets/favicon-64.png"
   min_sdk_android: 21
+

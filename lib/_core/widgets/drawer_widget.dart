@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bytebank/_core/constants/bytebank_colors.dart';
 import 'package:flutter_bytebank/_core/constants/bytebank_routes.dart';
 import 'package:flutter_bytebank/_core/constants/bytebank_screens.dart';
+import 'package:flutter_bytebank/generated/l10n/app_localizations.dart';
+
 
 Widget getDrawerWidget({
   required BuildContext context,
@@ -48,7 +50,7 @@ Widget getDrawerWidget({
                   );
                 },
                 child: Text(
-                  "Transferências",
+                  AppLocalizations.of(context)!.transfer,
                   style: _getDrawerTextStyle(
                     currentScreen: screen,
                     currentButton: BytebankScreens.transfers,
